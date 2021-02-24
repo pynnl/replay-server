@@ -14,6 +14,7 @@ let formattedData: unknown = '';
 const dataReadInterval = setInterval(() => {
   const line = dataRead.next();
   if (!line) {
+    formattedData = '';
     clearInterval(dataReadInterval);
     return;
   }
