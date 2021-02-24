@@ -1,5 +1,6 @@
 {
   "dataUrl": "http://worldtimeapi.org/api/ip",
   "fetchDataInterval": 1000,
+  "skipBadResponses": true,
   "replayDataPort": 3000
 }

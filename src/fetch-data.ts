@@ -4,7 +4,7 @@ import path from 'path';
 import config from './config';
 import {DataInfo} from './types';
 
-const {rootDir, dataUrl, fetchDataInterval} = config;
+const {rootDir, dataUrl, fetchDataInterval, skipBadResponses} = config;
 const dataDir = path.join(rootDir, 'data');
 if (!fs.existsSync(dataDir)) {
   fs.mkdirSync(dataDir);
@@ -32,6 +32,8 @@ setInterval(() => {
 
   http.get(dataUrl, res => {
     if (res.statusCode !== 200) {
+      if (skipBadResponses) return;
+
       writeData(dataInfo);
       return;
     }
