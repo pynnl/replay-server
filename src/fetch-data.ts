@@ -5,12 +5,16 @@ import config from './config';
 import {DataInfo} from './types';
 
 const {rootDir, dataUrl, fetchDataInterval} = config;
+const dataDir = path.join(rootDir, 'data');
+if (!fs.existsSync(dataDir)) {
+  fs.mkdirSync(dataDir);
+}
 const dataFile = new Date()
   .toUTCString()
   .replace(/,/g, '')
   .replace(/:/g, '-')
   .replace(/\s/g, '_');
-const dataPath = path.join(rootDir, 'data', dataFile);
+const dataPath = path.join(dataDir, dataFile);
 const dataWrite = fs.createWriteStream(dataPath);
 let dataWriteQueue = Promise.resolve();
 let nDataFetched = 0;
