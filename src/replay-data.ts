@@ -19,14 +19,12 @@ const dataReadInterval = setInterval(() => {
     return;
   }
 
-  if (line) {
-    try {
-      const dataInfo: DataInfo = JSON.parse(line.toString());
-      formattedData = formatData(dataInfo);
-    } catch {
-      console.warn('could not parse dataInfo');
-      formattedData = '';
-    }
+  try {
+    const dataInfo: DataInfo = JSON.parse(line.toString());
+    formattedData = formatData(dataInfo);
+  } catch {
+    console.warn('could not parse dataInfo');
+    formattedData = '';
   }
 }, fetchDataInterval);
 
