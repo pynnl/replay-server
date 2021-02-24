@@ -1,0 +1,5 @@
+{
+  "dataUrl": "http://worldtimeapi.org/api/ip",
+  "fetchDataInterval": 1000,
+  "replayDataPort": 3000
+}
