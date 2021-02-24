@@ -11,6 +11,9 @@
   "keywords": [],
   "author": "pynnl",
   "license": "MIT",
+  "engines": {
+    "node": ">14.0.0"
+  },
   "devDependencies": {
     "@types/koa": "^2.13.0",
     "@types/n-readlines": "^1.0.1",
