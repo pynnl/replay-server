@@ -7,15 +7,16 @@ import {DataInfo} from './types';
 
 const {rootDir, fetchDataInterval, replayDataPort} = config;
 const dataPath = path.join(rootDir, process.argv[2]);
-const dataRead = new NReadlines(dataPath);
+let dataRead = new NReadlines(dataPath);
 let formattedData: unknown = '';
 
 // Replay data
-const dataReadInterval = setInterval(() => {
+const readData = () => {
   const line = dataRead.next();
+  // Reset when reaching end of data
   if (!line) {
-    formattedData = '';
-    clearInterval(dataReadInterval);
+    dataRead = new NReadlines(dataPath);
+    readData();
     return;
   }
 
@@ -26,7 +27,9 @@ const dataReadInterval = setInterval(() => {
     console.warn('could not parse dataInfo');
     formattedData = '';
   }
-}, fetchDataInterval);
+};
+
+setInterval(readData, fetchDataInterval);
 
 // Create server
 const app = new Koa();
