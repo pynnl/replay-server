@@ -1,5 +1,5 @@
 import Koa from 'koa';
-import NReadlines from 'n-readlines';
+import NReadlines from 'n-readlines-next';
 import path from 'path';
 import config from './config';
 import formatData from './format-data';

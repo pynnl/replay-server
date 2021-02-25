@@ -1,11 +1,10 @@
 devDependencies:
   '@types/koa': 2.13.0
-  '@types/n-readlines': 1.0.1
   '@types/node': 14.14.31
   esbuild-dev: 0.5.1
   gts: 3.1.0_typescript@4.2.2
   koa: 2.13.1
-  n-readlines: 1.0.1
+  n-readlines-next: 1.0.3
   typescript: 4.2.2
 lockfileVersion: 5.2
 packages:
@@ -180,12 +179,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-fZQQafSREFyuZcdWFAExYjBiCL7AUCdgsk80iO0q4yihYYdcIiH28CcuPTGFgLOCC8RlW49GSQxdHwZP+I7CNg==
-  /@types/n-readlines/1.0.1:
-    dependencies:
-      '@types/node': 14.14.31
-    dev: true
-    resolution:
-      integrity: sha512-n1ND4k+9hgtil2HnHK+1tIj1UWchsD+RwoH7eVQqLbUe8AxwLuqDEnx3Riq+twHoMTjP80Q/ilB3LGdyXKfTEg==
   /@types/node/14.14.31:
     dev: true
     resolution:
@@ -481,6 +474,12 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-b8um+L1RzM3WDSzvhm6gIz1yfTbBt6YTlcEKAvsmqCZZFw46z626lVj9j1yEPW33H5H+lBQpZMP1k8l+78Ha0A==
+  /buf-indexof/1.0.1:
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-QsIE80vSiBHKiPeIJ0Ogk6Lqc8E=
   /cache-content-type/1.0.1:
     dependencies:
       mime-types: 2.1.29
@@ -1928,12 +1927,14 @@ packages:
     dev: true
     resolution:
       integrity: sha512-nnbWWOkoWyUsTjKrhgD0dcz22mdkSnpYqbEjIm2nhwhuxlSkpywJmBo8h0ZqJdkp73mb90SssHkN4rsRaBAfAA==
-  /n-readlines/1.0.1:
+  /n-readlines-next/1.0.3:
+    dependencies:
+      buf-indexof: 1.0.1
     dev: true
     engines:
-      node: '>=6.x.x'
+      node: '>=0.10.0'
     resolution:
-      integrity: sha512-z4SyAIVgMy7CkgsoNw7YVz40v0g4+WWvvqy8+ZdHrCtgevcEO758WQyrYcw3XPxcLxF+//RszTz/rO48nzD0wQ==
+      integrity: sha512-rLGNwmQlCa4dzq6GGZWSfwjajwz2qPzP+0DpC9xNz1at3FVu0zQw5afFGVIbZyrrCf4Do2uWFBRg98iVRxaQ3Q==
   /natural-compare/1.4.0:
     dev: true
     resolution:
@@ -2841,10 +2842,9 @@ packages:
       integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
 specifiers:
   '@types/koa': ^2.13.0
-  '@types/n-readlines': ^1.0.1
   '@types/node': ^14.14.31
   esbuild-dev: ^0.5.1
   gts: ^3.1.0
   koa: ^2.13.1
-  n-readlines: ^1.0.1
+  n-readlines-next: ^1.0.3
   typescript: ^4.2.2
